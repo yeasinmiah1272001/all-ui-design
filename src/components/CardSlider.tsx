@@ -8,6 +8,10 @@ import { useRef } from "react";
 import { TreeBlogItem } from "../../type";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
+// ==================================
+// npm install react-slick --save
+// npm install slick-carousel --save
+// ==================================
 
 const CardSlider = () => {
   const sliderRef = useRef<Slider>(null);
