@@ -8,12 +8,13 @@ import { useRef } from "react";
 import { TreeBlogItem } from "../../type";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
+
 // ==================================
 // npm install react-slick --save
 // npm install slick-carousel --save
 // ==================================
 
-const CardSlider = () => {
+const CardSlider2 = () => {
   const sliderRef = useRef<Slider>(null);
 
   const next = () => {
@@ -33,16 +34,24 @@ const CardSlider = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3, // Adjust for larger tablets
           slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
       },
       {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2, // Adjust for tablets
+          slidesToScroll: 1,
+          dots: true,
+        },
+      },
+      {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1, // Single slide on mobile devices
           slidesToScroll: 1,
           dots: true,
         },
@@ -51,11 +60,11 @@ const CardSlider = () => {
   };
 
   return (
-    <div className="slider-container py-10 px-4 md:px-10 ">
+    <div className="slider-container py-10 px-4 md:px-10 relative">
       <h2 className="text-center text-2xl font-bold mb-6 text-gray-900">
-        Featured Blogs
+        Featured Designs
       </h2>
-      <div className="flex justify-end gap-6 items-center mb-4">
+      <div className="absolute top-1/2 left-0 z-10 flex justify-between w-full transform -translate-y-1/2 px-6">
         <button
           onClick={previous}
           className="bg-gray-800 text-white p-2 rounded-full shadow-md hover:bg-gray-700 transition duration-300"
@@ -71,10 +80,10 @@ const CardSlider = () => {
       </div>
       <Slider ref={sliderRef} {...settings}>
         {treeBlog.map((item: TreeBlogItem) => (
-          <div key={item.id} className="p-4 m-0 gap-6 ">
-            <div className=" rounded-lg border border-gray-400 hover:shadow-black  shadow-md overflow-hidden transition-transform hover:scale-105">
+          <div key={item.id} className="p-4 md:p-8 m-0 gap-6">
+            <div className="rounded-lg border border-gray-400 hover:shadow-lg shadow-md overflow-hidden transition group hover:shadow-black duration-300">
               <Image
-                className=" mx-auto object-contain h-56 p-4"
+                className="mx-auto object-cover duration-300 group-hover:scale-110 transition-transform h-56 w-full p-4"
                 src={item.images[0].url}
                 alt={item.title}
                 height={200}
@@ -96,4 +105,4 @@ const CardSlider = () => {
   );
 };
 
-export default CardSlider;
+export default CardSlider2;
