@@ -16,7 +16,6 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="text-2xl font-bold">MyLogo</div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
             <Link href="/" passHref>
               <p className="hover:text-gray-300">Home</p>
