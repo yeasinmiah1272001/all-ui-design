@@ -11,17 +11,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-gray-400 text-white shadow-lg">
+    <nav className="bg-black text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="text-2xl font-bold">MyLogo</div>
+          <Link href={"/"}>
+            <div className="text-2xl font-bold uppercase">Ui Design</div>
+          </Link>
 
-          <div className="hidden md:flex space-x-6">
+          <div className="hidden md:flex space-x-6 uppercase">
             <Link href="/" passHref>
-              <p className="hover:text-gray-300">Home</p>
+              <p className="hover:text-gray-300">Card Slide</p>
             </Link>
-            <Link href="/" passHref>
-              <p className="hover:text-gray-300">About</p>
+            <Link href="/bannerpage" passHref>
+              <p className="hover:text-gray-300">Banner</p>
             </Link>
             <Link href="/" passHref>
               <p className="hover:text-gray-300">Services</p>

@@ -5,9 +5,11 @@ import Slider from "react-slick";
 import { treeBlog } from "@/constant";
 import Image from "next/image";
 import { useRef } from "react";
-import { TreeBlogItem } from "../../type";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
+import Container from "../Container";
+import { TreeBlogItem } from "../../../type";
+
 // ==================================
 // npm install react-slick --save
 // npm install slick-carousel --save
@@ -28,6 +30,8 @@ const CardSlider1 = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
+    autoplay: true,
+    autoplaySpeed: 2000,
     slidesToScroll: 1,
     responsive: [
       {
@@ -51,7 +55,7 @@ const CardSlider1 = () => {
   };
 
   return (
-    <div className="slider-container py-10 px-4 md:px-10 ">
+    <Container className="slider-container  ">
       <h2 className="text-center text-2xl font-bold mb-6 text-gray-900">
         Slide Design 1
       </h2>
@@ -71,7 +75,7 @@ const CardSlider1 = () => {
       </div>
       <Slider ref={sliderRef} {...settings}>
         {treeBlog.map((item: TreeBlogItem) => (
-          <div key={item.id} className="p-8 m-0 gap-6  ">
+          <div key={item.id} className="p-4 m-0 gap-6  ">
             <div className="rounded-lg   border border-gray-400 hover:shadow-lg shadow-md overflow-hidden transition group hover:shadow-black duration-300">
               <Image
                 className="mx-auto object-cover duration-300 group-hover:scale-110 transition-transform h-56 w-full p-4"
@@ -92,7 +96,7 @@ const CardSlider1 = () => {
           </div>
         ))}
       </Slider>
-    </div>
+    </Container>
   );
 };
 
