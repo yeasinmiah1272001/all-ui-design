@@ -1,27 +1,29 @@
 import Image from "next/image";
-import banner1 from "../../image/bannerImgOne.jpg";
+import banner1 from "../../image/left.webp";
 import Container from "../Container";
 
-const Banner1 = () => {
+const Banner2 = () => {
   return (
     <Container className="">
-      <h1 className="text-3xl font-bold">Banner1</h1>
-      <div className="w-full relative">
-        {/* Image with Gradient Overlay */}
+      <h1 className="text-3xl font-bold mb-4">Banner2</h1>
+      <div className="relative w-full h-[400px]">
+        {/* Image */}
         <Image
-          className="w-full h-[400px] object-cover"
+          className="object-cover"
           src={banner1}
-          height={500}
-          width={500}
+          fill
           alt="banner1"
+          sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/20 to-transparent" />
 
-        {/* Left-Aligned Text Content */}
-        <div className="absolute top-1/2 left-8 max-w-xl transform -translate-y-1/2 text-white text-left px-4 md:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            iPhone 16 Pro Max
-          </h1>
+        {/* Gradient Overlay (right side only) */}
+        <div className="absolute inset-0 bg-gradient-to-l from-black via-black/20 to-transparent" />
+
+        {/* Right-Aligned Text Content */}
+        <div className="absolute top-1/2 right-8 max-w-xl -translate-y-1/2 text-white text-right px-4 md:px-8">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            Ficus Bonsai Tree
+          </h2>
           <p className="text-sm md:text-base mb-6 leading-relaxed">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus
             quasi itaque eveniet optio pariatur? Aspernatur aut, fuga eum id,
@@ -37,4 +39,4 @@ const Banner1 = () => {
   );
 };
 
-export default Banner1;
+export default Banner2;

@@ -1,4 +1,4 @@
-import Banner from "@/components/banner/Banner1";
+import Banner from "@/components/banner/Banner";
 import React from "react";
 
 const BannerPage = () => {
