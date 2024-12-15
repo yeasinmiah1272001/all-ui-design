@@ -17,7 +17,6 @@ const Banner3 = () => {
 
         <div className="absolute inset-0 bg-black bg-opacity-20" />
 
-        {/* Centered Text Content */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center max-w-xl px-4 md:px-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
