@@ -7,7 +7,6 @@ const Banner3 = () => {
     <Container className="">
       <h1 className="text-3xl font-bold mb-4">Banner3</h1>
       <div className="relative w-full h-[400px]">
-        {/* Image */}
         <Image
           className="object-cover"
           src={banner1}
@@ -16,7 +15,6 @@ const Banner3 = () => {
           sizes="100vw"
         />
 
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-black bg-opacity-20" />
 
         {/* Centered Text Content */}
